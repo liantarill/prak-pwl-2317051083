@@ -1,26 +1,20 @@
 @extends('layouts.app')
+
 @section('content')
-    <h1>Daftar Pengguna</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nama</th>
-                <th>NPM</th>
-                <th>Kelas</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($users as $user)
-                <tr>
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="h3 fw-bold p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">Daftar
+                Pengguna</h1>
+            <a href="{{ route('user.create') }}" class="btn btn-primary shadow-sm">
+                <i class="bi bi-person-plus-fill"></i> Add User
+            </a>
+        </div>
 
 
-                    <td>{{ $user->id }}</td>
-                    <td>{{ $user->nama }}</td>
-                    <td>{{ $user->nim }}</td>
-                    <td>{{ $user->nama_kelas }}</td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
+        <div class="card shadow border-0 rounded-3">
+            <div class="card-body p-0">
+                <x-user-table />
+            </div>
+        </div>
+    </div>
 @endsection
